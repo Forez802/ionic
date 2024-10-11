@@ -1,0 +1,41 @@
+
+
+<ion-content>
+  <ion-buttons>
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="header-section">
+        <ion-avatar>
+          <img src="assets/img/cuchimba.png" />
+        </ion-avatar>
+        <div class="user-info">
+          <h2>Hola, Cuchimba</h2>
+          <p>Master Shadow</p>
+        </div>
+        <ion-button fill="outline" class="add-button">
+          <ion-icon name="add"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-searchbar placeholder="Search"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+
+
+      <ion-item *ngFor="let personaje of personajes">
+        <ion-avatar slot="start">
+          <img [src]="personaje.image" />
+        </ion-avatar>
+        <ion-label>
+          <h2> {{ personaje.name }}</h2>
+          <p>{{ personaje.description }}</p>
+        </ion-label>
+      </ion-item>
+
+  </ion-grid>
+</ion-content>
