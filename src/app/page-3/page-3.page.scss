@@ -1,26 +1,22 @@
 /* Aplica el degradado en todo el fondo, de negro (abajo) a morado (arriba) */
 ion-content {
   --background: linear-gradient(to top, #000000, #3E065F);
-  display: flex;
-  justify-content: center;
   background-color: #ffffff;
   color: white;
   text-align: center;
   padding: 0;
   position: relative;
-  width: 375px;
-  height: 812px;
+  width: 381px; /* Cambiado de 375px a 381px */
+  height: 812px; /* Mantener esta altura */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  
 }
 
-
-/* Estilos para los componentes */
+/* Ajustar el contenedor para que tenga las dimensiones que solicitaste */
 .app-container {
-  width: 375px;
+  width: 381px; /* Cambiado de 375px a 381px */
   height: 812px;
   margin: 0 auto;
   border-radius: 10px;
@@ -70,8 +66,6 @@ ion-label h2 {
   font-size: 1.2em;
   color: white;
 }
-
-
 
 ion-avatar img {
   border-radius: 50%;
