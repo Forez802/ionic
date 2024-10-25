@@ -1,19 +1,45 @@
-
-<ion-header [translucent]="true">
-  
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content class="content">
-  <img src="assets/img/Union.png">
-  <div class="image-container">
-    <img src="assets/img/caballerooscuro.png" alt="Guerrero Oscuro" />
+<ion-content>
+  <!-- Primera categoría -->
+  <h2>Categoría 1</h2>
+  <div class="vertical-scroll">
+    <ion-row>
+      <ion-col size="1px" *ngFor="let producto of categoria1">
+        <ion-card>
+          <img [src]="producto.image" alt="Imagen del producto" />
+          <ion-card-header>
+            <ion-card-title>{{ producto.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Precio:</strong> ${{ producto.price }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </div>
+</ion-content>
 
-  <div class="text-container">
-    <h1>Despierta Tus Recuerdos y Salva El Reino De Las Sombras</h1>
-    <p>Moldea a tus personajes a voluntad y graba su destino en una historia oscura.</p>
+<ion-content>
+  <!-- Segunda categoría -->
+  <h2>Categoría 2</h2>
+  <div class="horizontal-scroll">
+    <ion-row>
+      <ion-col size="auto" *ngFor="let producto of categoria2">
+        <ion-card>
+          <img [src]="producto.image" alt="Imagen del producto" />
+          <ion-card-header>
+            <ion-card-title>{{ producto.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Precio:</strong> ${{ producto.price }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </div>
-  
-    <ion-button shape="round " class="action-button" routerLink="/page-2">Empieza La Aventura</ion-button>
-  
 </ion-content>

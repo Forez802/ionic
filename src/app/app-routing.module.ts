@@ -12,21 +12,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'page-2',
-    loadChildren: () => import('./page-2/page-2.module').then( m => m.Page2PageModule)
+    path: 'carrito',
+    loadChildren: () => import('./carrito/carrito.module').then( m => m.CarritoPageModule)
   },
-  {
-    path: 'page-3',
-    loadChildren: () => import('./page-3/page-3.module').then( m => m.Page3PageModule)
-  },
-  {
-    path: 'page-4',
-    loadChildren: () => import('./page-4/page-4.module').then( m => m.Page4PageModule)
-  },
-  {
-    path: 'page-5',
-    loadChildren: () => import('./page-5/page-5.module').then( m => m.Page5PageModule)
-  },
+
 ];
 
 @NgModule({
