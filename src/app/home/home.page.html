@@ -7,9 +7,9 @@
 <ion-content>
   <!-- Primera categoría -->
   <h2>Categoría 1</h2>
-  <div class="vertical-scroll">
+  <div class="horizontal-scroll">
     <ion-row>
-      <ion-col size="1px" *ngFor="let producto of categoria1">
+      <ion-col size="1" *ngFor="let producto of categoria1">
         <ion-card>
           <img [src]="producto.image" alt="Imagen del producto" />
           <ion-card-header>
@@ -17,19 +17,18 @@
           </ion-card-header>
           <ion-card-content>
             <p><strong>Precio:</strong> ${{ producto.price }}</p>
+            <ion-button (click)="addToCart(producto)">Agregar al Carrito</ion-button>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </div>
-</ion-content>
 
-<ion-content>
   <!-- Segunda categoría -->
   <h2>Categoría 2</h2>
   <div class="horizontal-scroll">
     <ion-row>
-      <ion-col size="auto" *ngFor="let producto of categoria2">
+      <ion-col size="1" *ngFor="let producto of categoria2">
         <ion-card>
           <img [src]="producto.image" alt="Imagen del producto" />
           <ion-card-header>
@@ -37,9 +36,35 @@
           </ion-card-header>
           <ion-card-content>
             <p><strong>Precio:</strong> ${{ producto.price }}</p>
+            <ion-button (click)="addToCart(producto)">Agregar al Carrito</ion-button>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </div>
+
+  <!-- Carrito de Compras -->
+  <h2>Carrito de Compras</h2>
+  <div *ngIf="cart.length > 0; else emptyCart">
+    <ion-list>
+      <ion-item *ngFor="let item of cart; let i = index">
+        <ion-thumbnail slot="start">
+          <img [src]="item.image" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ item.title }}</h2>
+          <p>Precio: ${{ item.price }} (Cantidad: {{ item.quantity }})</p>
+        </ion-label>
+        <ion-button (click)="removeFromCart(i)" fill="outline" slot="end">Eliminar</ion-button>
+      </ion-item>
+    </ion-list>
+    
+    <ion-item>
+      <ion-label>Total: {{ getTotal() | currency }}</ion-label>
+    </ion-item>
+  </div>
+
+  <ng-template #emptyCart>
+    <ion-label>No hay productos en el carrito.</ion-label>
+  </ng-template>
 </ion-content>
