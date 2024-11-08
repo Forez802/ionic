@@ -1,0 +1,175 @@
+:host {
+    display: block;
+    width: 375px;
+    height: 812px;
+    margin: 0 auto;
+    background-color: #1e1e1e; 
+}
+
+.character-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px; 
+}
+
+.character-header img {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.character-header h1 {
+    color: white;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+h3 {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.stats-tabs {
+    margin-top: 5px;
+    padding: 0 10px;
+}
+
+ion-segment {
+    --background: transparent;
+}
+
+ion-segment-button {
+    --color: white;
+    --color-checked: #ff005e; 
+    --indicator-color: #ff005e; 
+    color: white;
+}
+
+
+ion-content {
+    --background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.stats-grid{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.stats-item {
+    margin-bottom: 20px;
+}
+
+ion-progress-bar {
+    --progress-height: 8px;
+    --background: #1e1e1e;
+    --progress-background: #ff005e; 
+    margin-bottom: 15px;
+}
+
+
+ion-button { 
+    --border-radius:8px;
+    font-size: 16px;
+}
+
+
+/* Aplica el degradado en todo el fondo, de negro (abajo) a morado (arriba) */
+ion-content {
+    --background: linear-gradient(to top, #000000, #3E065F);
+    background-color: #ffffff;
+    color: white;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    width: 381px; /* Cambiado de 375px a 381px */
+    height: 812px; /* Mantener esta altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Ajustar el contenedor para que tenga las dimensiones que solicitaste */
+  .app-container {
+    width: 381px; /* Cambiado de 375px a 381px */
+    height: 812px;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+  
+  .header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+  }
+  
+  .user-info h2 {
+    font-size: 1.5em;
+    color: white;
+  }
+  
+  .user-info p {
+    font-size: 1em;
+    color: #ccc; /* Color gris claro para los subtítulos */
+  }
+  
+  .add-button {
+    --background: transparent;
+    --border-color: #fff;
+    --color: #fff;
+  }
+  
+  ion-searchbar {
+    --background: #4b165f; /* Color del fondo del searchbar */
+    --color: white;
+  }
+  
+  ion-list {
+    margin-top: 10px;
+  }
+  
+  ion-item {
+    --background: transparent; /* Fondo semi-transparente para los items */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  ion-label h2 {
+    font-size: 1.2em;
+    color: white;
+  }
+  
+  ion-avatar img {
+    border-radius: 50%;
+  }
+  
+  ion-toolbar {
+    --background: #6200ea;
+  }
+  
+  .custom-progress-bar {
+    display: flex;
+    gap: 2px;
+  }
+
+  .progress-block {
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    background-color: #4a4a4a;
+    transition: background-color 0.3s;
+  }
+
+  .progress-block.filled {
+    background-color: #9b5de5;
+  }

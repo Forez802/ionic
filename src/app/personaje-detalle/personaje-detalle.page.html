@@ -1,0 +1,61 @@
+<ion-content>
+  <ion-buttons>
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+
+  <div class="character-header">
+    <img [src]="personaje?.image" alt="{{ personaje?.name }}">
+    <h1>{{ personaje?.name }}</h1>
+  </div>
+
+  <div class="stats-tabs">
+    <ion-segment [value]="segmentValue" (ionChange)="segmentChanged($event)">
+      <ion-segment-button *ngFor="let option of segmentOptions" [value]="option.value">
+        <ion-label>{{ option.label }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="stats-grid">
+    <!-- Mostrar contenido de cada sección basado en `segmentValue` -->
+    <div *ngIf="segmentValue === 'stats1'">
+      <div class="stat-item">
+        <h3>Fuerza</h3>
+        <div class="custom-progress-bar">
+          <div 
+            *ngFor="let block of getBlocks(7,10)"
+            [class.filled]="block"
+            class="progress-block"></div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <h3>Destreza</h3>
+        <ion-progress-bar value="0.6"></ion-progress-bar>
+      </div>
+      <div class="stat-item">
+        <h3>Constitución</h3>
+        <ion-progress-bar value="0.5"></ion-progress-bar>
+      </div>
+      <div class="stat-item">
+        <h3>Sabiduría</h3>
+        <ion-progress-bar value="0.8"></ion-progress-bar>
+      </div>
+      <div class="stat-item">
+        <h3>Inteligencia</h3>
+        <ion-progress-bar value="0.7"></ion-progress-bar>
+      </div>
+    </div>
+
+    <div *ngIf="segmentValue === 'stats2'">
+      <p>Contenido de Stats 2</p>
+    </div>
+
+    <div *ngIf="segmentValue === 'stats3'">
+      <p>Contenido de Stats 3</p>
+    </div>
+
+    <div *ngIf="segmentValue === 'objetos'">
+      <p>Contenido de Objetos</p>
+    </div>
+  </div>
+</ion-content>
