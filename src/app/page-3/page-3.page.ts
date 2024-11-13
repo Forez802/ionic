@@ -54,4 +54,8 @@ export class Page3Page implements OnInit {
   verDetalles(personaje: any) {
     this.router.navigate(['/personaje-detalle', personaje.name]);
   }
+  crearSala() {
+    this.router.navigate(['/crear-sala'])
+  }
+  
 }

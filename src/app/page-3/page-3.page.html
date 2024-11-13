@@ -1,6 +1,4 @@
-
-
-<ion-content>
+<ion-content class="page-container">
   <ion-buttons>
     <ion-back-button defaultHref="/"></ion-back-button>
   </ion-buttons>
@@ -26,16 +24,21 @@
       </ion-col>
     </ion-row>
 
-
-      <ion-item *ngFor="let personaje of personajes" (click)="verDetalles(personaje)">
-        <ion-avatar slot="start">
-          <img [src]="personaje.image" />
-        </ion-avatar>
-        <ion-label>
-          <h2> {{ personaje.name }}</h2>
-          <p>{{ personaje.description }}</p>
-        </ion-label>
-      </ion-item>
-
+    <ion-item *ngFor="let personaje of personajes" (click)="verDetalles(personaje)">
+      <ion-avatar slot="start">
+        <img [src]="personaje.image" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ personaje.name }}</h2>
+        <p>{{ personaje.description }}</p>
+      </ion-label>
+    </ion-item>
   </ion-grid>
+
+  <!-- Botón Crear -->
+  <div class="crear-boton-container">
+    <ion-button expand="full" class="crear-boton" (click)="crearSala()" style="--background: transparent;">
+      Crear Sala
+    </ion-button>
+  </div>
 </ion-content>

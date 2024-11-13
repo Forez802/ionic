@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'personaje-detalle',
     loadChildren: () => import('./personaje-detalle/personaje-detalle.module').then( m => m.PersonajeDetallePageModule)
   },
+  {
+    path: 'crear-sala',
+    loadChildren: () => import('./crear-sala/crear-sala.module').then( m => m.CrearSalaPageModule)
+  },
 ];
 
 @NgModule({

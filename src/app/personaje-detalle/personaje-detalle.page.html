@@ -16,46 +16,63 @@
     </ion-segment>
   </div>
 
-  <div class="stats-grid">
-    <!-- Mostrar contenido de cada sección basado en `segmentValue` -->
-    <div *ngIf="segmentValue === 'stats1'">
+  <div class="stats-grid" *ngIf="segmentValue.startsWith('stats')">
+    <div class="stats-column">
       <div class="stat-item">
         <h3>Fuerza</h3>
         <div class="custom-progress-bar">
-          <div 
-            *ngFor="let block of getBlocks(7,10)"
-            [class.filled]="block"
-            class="progress-block"></div>
+          <div *ngFor="let block of getBlocks(personaje.stats.fuerza, 10)"
+               [class.filled]="block"
+               class="progress-block"></div>
         </div>
       </div>
       <div class="stat-item">
         <h3>Destreza</h3>
-        <ion-progress-bar value="0.6"></ion-progress-bar>
+        <div class="custom-progress-bar">
+          <div *ngFor="let block of getBlocks(personaje.stats.destreza, 10)"
+               [class.filled]="block"
+               class="progress-block"></div>
+        </div>
       </div>
       <div class="stat-item">
         <h3>Constitución</h3>
-        <ion-progress-bar value="0.5"></ion-progress-bar>
+        <div class="custom-progress-bar">
+          <div *ngFor="let block of getBlocks(personaje.stats.constitucion, 10)"
+               [class.filled]="block"
+               class="progress-block"></div>
+        </div>
       </div>
+    </div>
+
+    <div class="stats-column">
       <div class="stat-item">
         <h3>Sabiduría</h3>
-        <ion-progress-bar value="0.8"></ion-progress-bar>
+        <div class="custom-progress-bar">
+          <div *ngFor="let block of getBlocks(personaje.stats.sabiduria, 10)"
+               [class.filled]="block"
+               class="progress-block"></div>
+        </div>
       </div>
       <div class="stat-item">
         <h3>Inteligencia</h3>
-        <ion-progress-bar value="0.7"></ion-progress-bar>
+        <div class="custom-progress-bar">
+          <div *ngFor="let block of getBlocks(personaje.stats.inteligencia, 10)"
+               [class.filled]="block"
+               class="progress-block"></div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <h3>Apariencia</h3>
+        <div class="custom-progress-bar">
+          <div *ngFor="let block of getBlocks(personaje.stats.apariencia, 10)"
+               [class.filled]="block"
+               class="progress-block"></div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div *ngIf="segmentValue === 'stats2'">
-      <p>Contenido de Stats 2</p>
-    </div>
-
-    <div *ngIf="segmentValue === 'stats3'">
-      <p>Contenido de Stats 3</p>
-    </div>
-
-    <div *ngIf="segmentValue === 'objetos'">
-      <p>Contenido de Objetos</p>
-    </div>
+  <div *ngIf="segmentValue === 'objetos'">
+    <p>Contenido de Objetos</p>
   </div>
 </ion-content>
