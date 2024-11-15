@@ -10,7 +10,7 @@ ion-content {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin: 0 auto; /* Centrar el contenido si hay más espacio disponible */
+    margin: 0 auto;/* Centrar el contenido si hay más espacio disponible */
   }
 
   .crear-sala-content {
@@ -47,7 +47,7 @@ ion-content {
   }
 
   .character-item {
-    background-color: #4b005d;
+    --background: transparent;
     border-radius: 12px;
     padding: 10px;
     color: white;
@@ -80,12 +80,14 @@ ion-content {
     color: black;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 50px;
     width: 100%;
     padding: 10px;
     transition: background 0.3s;
+    
   }
 
   .crear-boton:hover {
     --background: #7e45d1;
+    
   }

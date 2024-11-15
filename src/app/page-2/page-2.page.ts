@@ -10,16 +10,23 @@ export class Page2Page {
   email: string = '';
   password: string = '';
 
-  // credencial predeterminada
+  // credenciales predeterminadas
   validEmail: string = 'jorge@fet.com';
   validPassword: string = '12345';
+
+  // nuevas credenciales
+  newEmail: string = 'ana@fet.com';
+  newPassword: string = '54321';
 
   constructor(private navCtrl: NavController) {}
 
   onLogin() {
     if (this.email === this.validEmail && this.password === this.validPassword) {
-      // pagina a redirigir
+      // redirigir a page-3 si las credenciales son válidas
       this.navCtrl.navigateForward('/page-3');
+    } else if (this.email === this.newEmail && this.password === this.newPassword) {
+      // redirigir a page-4 si las nuevas credenciales son correctas
+      this.navCtrl.navigateForward('/page-4');
     } else {
       alert('Credenciales incorrectas');
     }

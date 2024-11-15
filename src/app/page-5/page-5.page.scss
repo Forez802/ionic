@@ -1,0 +1,70 @@
+ion-content {
+    width: 375px;
+    height: 812px;
+    max-width: 375px;
+    max-height: 812px;
+    --background: linear-gradient(to top, #000000, #3E065F); /* Fondo degradado */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto; /* Centrar el contenido si hay más espacio disponible */
+  }
+  
+  .crear-usuario-content {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  ion-item.custom-item {
+    --background: transparent; /* Fondo completamente transparente */
+    --ion-background-color: transparent; /* Otra propiedad para asegurar transparencia */
+    border-radius: 12px;
+    margin-bottom: 15px;
+    color: white;
+    padding: 12px;
+  }
+  
+  ion-input {
+    --background: transparent; /* Fondo transparente */
+    --ion-background-color: transparent; /* Asegurar transparencia */
+    color: #ffffff;
+    font-size: 14px;
+  }
+  
+  .crear-boton-container {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .crear-boton {
+    --background: #9b5de5;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    width: 100%;
+    padding: 10px;
+    transition: background 0.3s;
+  }
+  
+  .crear-boton:hover {
+    --background: #7e45d1;
+  }
+  
