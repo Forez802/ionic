@@ -7,6 +7,8 @@ import { AlertController, NavController } from '@ionic/angular';
   styleUrls: ['./crear-sala.page.scss'],
 })
 export class CrearSalaPage {
+  numeroDeJugadores: number = 1; // Valor predeterminado
+
   constructor(
     private alertController: AlertController,
     private navController: NavController
@@ -20,7 +22,8 @@ export class CrearSalaPage {
         {
           text: 'OK',
           handler: () => {
-            this.navController.navigateForward('/page-3');
+            // Pasar el número de jugadores al redirigir a la página del mapa
+            this.navController.navigateForward(`/mapa?jugadores=${this.numeroDeJugadores}`);
           },
         },
       ],

@@ -1,0 +1,20 @@
+<ion-header [translucent]="true"></ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense"></ion-header>
+  <div class="content">
+    <div class="image-container">
+      <img src="assets/img/king.jpg" alt="Guerrero Oscuro" />
+    </div>
+
+    <div class="player-info">
+      <h2>Jugadores en la sala: {{ numeroDeJugadores }}</h2>
+    </div>
+
+    <div class="exit-button">
+      <ion-button expand="full" color="danger" (click)="salirDeSala()">
+        Salir de la Sala
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

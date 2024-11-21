@@ -6,6 +6,10 @@ describe('Page4Page', () => {
   let fixture: ComponentFixture<Page4Page>;
 
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [Page4Page],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(Page4Page);
     component = fixture.componentInstance;
     fixture.detectChanges();

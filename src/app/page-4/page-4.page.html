@@ -1,46 +1,28 @@
 <ion-content>
-  <ion-buttons>
-    <ion-back-button defaultHref="/"></ion-back-button>
-  </ion-buttons>
-
-  <div class="character-header">
-    <img [src]="personaje.image" alt="{{ personaje.name }}">
-    <h1>{{ personaje.name }}</h1>
-  </div>
-
-  <div class="stats-tabs">
-    <ion-segment [value]="segmentValue" (ionChange)="segmentChanged($event)">
-      <ion-segment-button *ngFor="let option of segmentOptions" [value]="option.value">
-        <ion-label>{{ option.label }}</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </div>
-
-  <div class="stats-grid" *ngIf="segmentValue.startsWith('stats')">
-    <div class="stats-column">
-      <div class="stat-item" *ngFor="let stat of ['fuerza', 'destreza', 'constitucion']">
-        <h3>{{ stat | titlecase }}</h3>
-        <div class="custom-progress-bar">
-          <div *ngFor="let block of getBlocks(personaje.stats[stat])"
-               [class.filled]="block"
-               class="progress-block"></div>
+    <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  
+    <div class="create-character">
+      <h2>Crea tu Personaje</h2>
+  
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <br>
+        <ion-input [(ngModel)]="nuevoPersonaje.nombre" placeholder="Ingrese el nombre"></ion-input>
+      </ion-item>
+  
+      <div class="file-upload">
+        <h3>Selecciona Foto</h3>
+        <input type="file" accept="image/*" (change)="onFileSelected($event)" />
+        <div *ngIf="selectedImage" class="preview">
+          <h4>Vista Previa:</h4>
+          <img [src]="selectedImage" alt="Imagen seleccionada" />
         </div>
       </div>
+      <br>
+  
+      <ion-button expand="full" (click)="crearPersonaje()">Crear Personaje</ion-button>
     </div>
-
-    <div class="stats-column">
-      <div class="stat-item" *ngFor="let stat of ['sabiduria', 'inteligencia', 'apariencia']">
-        <h3>{{ stat | titlecase }}</h3>
-        <div class="custom-progress-bar">
-          <div *ngFor="let block of getBlocks(personaje.stats[stat])"
-               [class.filled]="block"
-               class="progress-block"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="segmentValue === 'objetos'">
-    <p>Contenido de Objetos</p>
-  </div>
-</ion-content>
+  </ion-content>
+  

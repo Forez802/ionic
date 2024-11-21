@@ -1,0 +1,69 @@
+ion-content {
+    width: 375px;
+    height: 812px;
+    max-width: 375px;
+    max-height: 812px;
+    --background: linear-gradient(to top, #000000, #3E065F); /* Fondo degradado */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Asegura que el contenido inicie desde arriba */
+    overflow: hidden;
+    margin: 0 auto; /* Centrar el contenido si hay más espacio disponible */
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 60%; /* Limita la altura para que no ocupe todo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .player-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+  
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  
+  .exit-button {
+    position: absolute;
+    bottom: 20px; /* Coloca el botón cerca del borde inferior */
+    width: 90%; /* Asegura que el botón no ocupe todo el ancho */
+    display: flex;
+    justify-content: center;
+  }
+  
+  ion-button {
+    --background: #ff4d4d; /* Color de fondo rojo */
+    --color: white; /* Texto blanco */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px;
+    transition: background 0.3s ease;
+  
+    &:hover {
+      --background: #e63946; /* Cambia a un rojo más oscuro al pasar el ratón */
+    }
+  }
+  

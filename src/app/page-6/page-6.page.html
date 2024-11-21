@@ -9,12 +9,6 @@
     <h1>{{ personaje?.name }}</h1>
   </div>
 
-  <ion-button (click)="mostrarGuia()">
-    <ion-icon slot="start" name="alert-circle-outline"></ion-icon>
-    Ver Guía
-  </ion-button>
-  
-
   <!-- Pestañas de estadísticas -->
   <div class="stats-tabs">
     <ion-segment [value]="segmentValue" (ionChange)="segmentChanged($event)">
@@ -32,8 +26,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.fuerza, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('fuerza')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('fuerza')">-</ion-button>
+ 
       </div>
 
       <div class="stat-item">
@@ -41,8 +34,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.destreza, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('destreza')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('destreza')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -50,8 +42,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.constitucion, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('constitucion')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('constitucion')">-</ion-button>
+
       </div>
     </div>
 
@@ -61,8 +52,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.sabiduria, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('sabiduria')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('sabiduria')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -70,8 +60,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.inteligencia, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('inteligencia')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('inteligencia')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -79,8 +68,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.apariencia, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('apariencia')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('apariencia')">-</ion-button>
+
       </div>
     </div>
   </div>
@@ -93,8 +81,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.estamina, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('estamina')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('estamina')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -102,8 +89,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.balance, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('balance')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('balance')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -111,8 +97,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.resistencia, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('resistencia')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('resistencia')">-</ion-button>
+
       </div>
     </div>
 
@@ -122,8 +107,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.conocimiento, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('conocimiento')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('conocimiento')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -131,8 +115,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.fuerzavoluntad, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('fuerzavoluntad')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('fuerzavoluntad')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -140,8 +123,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.carisma, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('carisma')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('carisma')">-</ion-button>
+
       </div>
     </div>
   </div>
@@ -154,8 +136,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.musculatura, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('musculatura')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('musculatura')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -163,8 +144,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.punteria, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('punteria')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('punteria')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -172,8 +152,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.salud, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('salud')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('salud')">-</ion-button>
+
       </div>
     </div>
 
@@ -183,8 +162,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.logica, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('logica')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('logica')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -192,8 +170,7 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.intuicion, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('intuicion')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('intuicion')">-</ion-button>
+
       </div>
 
       <div class="stat-item">
@@ -201,15 +178,14 @@
         <div class="custom-progress-bar">
           <div *ngFor="let block of getBlocks(personaje.stats.verborrea, 10)" [class.filled]="block" class="progress-block"></div>
         </div>
-        <ion-button expand="full" class="increase" (click)="increaseStat('verborrea')">+</ion-button>
-        <ion-button expand="full" class="decrease" (click)="decreaseStat('verborrea')">-</ion-button>
+
       </div>
     </div>
   </div>
 
   <div *ngIf="segmentValue === 'objetos'">
     <p>Contenido de Objetos</p>
-
+    
     <h1>Personajes conocidos</h1>
     <p>...</p>
   </div>

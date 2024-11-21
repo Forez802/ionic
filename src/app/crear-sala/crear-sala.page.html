@@ -1,38 +1,40 @@
 <ion-content>
+  <ion-buttons>
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+
   <div class="crear-sala-content">
     <h2>Crear Sala</h2>
 
-    
-      <ion-item class="custom-item">
-        <ion-label position="stacked">Nombre de la Mesa</ion-label>
-        <ion-input placeholder="Introduce el nombre"></ion-input>
-      </ion-item>
+    <ion-item class="custom-item">
+      <ion-label position="stacked">Nombre de la Mesa</ion-label>
+      <ion-input placeholder="Introduce el nombre"></ion-input>
+    </ion-item>
 
-      <ion-item class="custom-item">
-        <ion-label position="stacked">Número De Jugadores:</ion-label>
-        <ion-input type="number" min="1" placeholder="1" value="1"></ion-input>
-      </ion-item>
+    <ion-item class="custom-item">
+      <ion-label position="stacked">Número De Jugadores:</ion-label>
+      <ion-input type="number" min="1" placeholder="1" value="1"></ion-input>
+    </ion-item>
 
-      <ion-item lines="none" class="custom-item">
-        <ion-label position="stacked">Seleccione Personajes</ion-label>
-      </ion-item>
+    <ion-item lines="none" class="custom-item">
+      <ion-label position="stacked">Seleccione Personajes</ion-label>
+    </ion-item>
 
-      <ion-item class="character-item">
-        <ion-avatar slot="start">
-          <img src="assets/img/arquero.png" />
-        </ion-avatar>
-        <ion-label>
-          <h3>Katsuhiro Takeshi</h3>
-          <p>🗡️ Maestro de la katana y especialista en el sigilo.</p>
-        </ion-label>
-        <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
-      </ion-item>
+    <ion-item class="character-item">
+      <ion-avatar slot="start">
+        <img src="assets/img/arquero.png" />
+      </ion-avatar>
+      <ion-label>
+        <h3>Katsuhiro Takeshi</h3>
+        <p>🗡️ Maestro de la katana y especialista en el sigilo.</p>
+      </ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
 
-      <ion-item class="custom-item">
-        <ion-label position="stacked">Notas Del Master</ion-label>
-        <ion-textarea placeholder="Introduce las notas aquí"></ion-textarea>
-      </ion-item>
-    
+    <ion-item class="custom-item">
+      <ion-label position="stacked">Notas Del Master</ion-label>
+      <ion-textarea placeholder="Introduce las notas aquí"></ion-textarea>
+    </ion-item>
 
     <div class="crear-boton-container">
       <ion-button expand="full" class="crear-boton" (click)="crearSala()">

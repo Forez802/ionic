@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';  // Importar Router para la navegación
 
 @Component({
   selector: 'app-page-4',
@@ -6,46 +7,47 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-4.page.scss'],
 })
 export class Page4Page implements OnInit {
-  personaje = {
-    name: 'Katsuhiro Takeshi',
-    image: 'assets/img/samurai.png',
-    stats: {
-      fuerza: 5,
-      destreza: 5,
-      constitucion: 5,
-      sabiduria: 5,
-      inteligencia: 5,
-      apariencia: 5,
-    },
-  };
-  segmentValue = 'stats1';  // Inicializa con un valor válido como 'stats1'
-  segmentOptions: { label: string, value: string }[] = [];
+  selectedImage: string | null = null; // Para almacenar la imagen seleccionada
+  nuevoPersonaje: any = { nombre: '', image: '', stats: { fuerza: 5, destreza: 5, constitucion: 5, sabiduria: 5, inteligencia: 5, apariencia: 5 } }; // Personaje a crear
 
-  constructor() {}
+  constructor(private router: Router) {}
 
-  ngOnInit() {
-    this.updateSegmentOptions();
+  ngOnInit() {}
+
+  // Método para manejar la selección de archivo (imagen)
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.selectedImage = reader.result as string; // Guardamos la imagen como base64
+        this.nuevoPersonaje.image = this.selectedImage; // Asignamos la imagen al nuevo personaje
+      };
+      reader.readAsDataURL(file); // Convertimos el archivo a una URL base64
+    }
   }
 
-  // Método actualizado para manejar los bloques en función del valor de la estadística
-  getBlocks(value: number): boolean[] {
-    return Array.from({ length: 5 }, (_, i) => i < value);  // Usa el valor de la estadística como la cantidad de bloques llenos
-  }
+  // Método para crear el personaje y navegar a la página 6
+  crearPersonaje() {
+    if (this.nuevoPersonaje.nombre && this.nuevoPersonaje.image) {
+      // Crear un objeto de personaje
+      const nuevoPersonaje = {
+        name: this.nuevoPersonaje.nombre, // Usamos el nombre ingresado por el usuario
+        image: this.nuevoPersonaje.image, // Usamos la imagen seleccionada
+        stats: {
+          fuerza: 5,
+          destreza: 5,
+          constitucion: 5,
+          sabiduria: 5,
+          inteligencia: 5,
+          apariencia: 5,
+        },
+      };
 
-  segmentChanged(event: any) {
-    this.segmentValue = event.detail.value;
-    this.updateSegmentOptions();
-  }
-
-  updateSegmentOptions() {
-    const allOptions = [
-      { label: 'Stats 1', value: 'stats1' },
-      { label: 'Stats 2', value: 'stats2' },
-      { label: 'Stats 3', value: 'stats3' },
-      { label: 'Objetos', value: 'objetos' },
-    ];
-
-    // Filtra las opciones para que no incluya la opción seleccionada
-    this.segmentOptions = allOptions.filter(option => option.value !== this.segmentValue);
+      // Navegamos a page-6 pasando el nuevo personaje como parámetro
+      this.router.navigate(['/page-6'], { state: { personaje: nuevoPersonaje } });
+    } else {
+      console.log('Faltan datos del personaje');
+    }
   }
 }

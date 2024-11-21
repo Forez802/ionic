@@ -42,7 +42,15 @@ const routes: Routes = [
   {
     path: 'crear-sala',
     loadChildren: () => import('./crear-sala/crear-sala.module').then( m => m.CrearSalaPageModule)
+  },  {
+    path: 'page-6',
+    loadChildren: () => import('./page-6/page-6.module').then( m => m.Page6PageModule)
   },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -6,6 +6,11 @@
   background-color: #1e1e1e;
 }
 
+ion-item {
+  --background: transparent;
+  align-items: center;
+}
+
 /* Encabezado del personaje */
 .character-header {
   display: flex;
